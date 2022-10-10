@@ -6,7 +6,7 @@
 	Winner Takes All
 
 # Team Overview:
-	Group members/ github usernames: {Walid Hamade : 7medeh , Huayang Yu : [Insert GitHub username], Zhengrui Yang : msodz}
+	Group members/ github usernames: {Walid Hamade : 7medeh , Huayang Yu : yhyyhy722, Zhengrui Yang : msodz}
 
 # Innovative Idea: 1v1 Badminton Ranked Matchmaking
 A platform that matches Badminton players against each other in 1v1 instances. This idea exists but what makes our idea cool is that it has a ranking system for competitive matches. At the end of a game, the users both input the results of the match. We would have in place an algorithm that then modifies the respective skill levels of each user that is reflective of the agreed upon match results. In application, the “skill” level attribute for each player can be used as a filtering for other people who want more skilled or less skilled players to play against. Would need to be based on the honor system. All we can do is identify if at least one person is lying but we still don’t know how to disincentivize lying or incentivize telling the truth. Apart from that, if the results inputed from each user match then results are saved because an agreement has been made.
