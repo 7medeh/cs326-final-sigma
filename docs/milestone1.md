@@ -7,7 +7,7 @@ User signs up by submitting a email, name, password, and a confirmation of the p
 
 ![](wireframe/Step1.png)
 <img src="wireframe/Step1.png"
-     style="width: 10; height: 10;" />
+     style="width=100; height=100;"/>
 
 ## - Step 2: 
 Once the user is signed up and added to our database, they are then redirected to the authentication/ sign in page. The user is prompted to enter their email and password they used previously when signing up.
