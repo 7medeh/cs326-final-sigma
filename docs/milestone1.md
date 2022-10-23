@@ -34,3 +34,25 @@ The user is greeted with the [app name]'s user interface where the user can sele
 	- Game History: Displays your recent games and how much points it added/subtracted from your ELO. This determines who you match up against in the future. 
 
 ![](wireframe/Step4-GameHistory.png)
+
+
+
+
+# DIVISION OF LABOUR
+
+Walid Hamade:
+- Organized the data interaction/wireframe on milestone 1 
+- Formulated user interface ideas 
+- GameHistory.html 
+- Home.html
+
+Huayang Yu:
+- SignIn.html
+- SignUp.html
+- Helped with design of framework
+
+Zhengrui Yang:
+- Matchmaking.html
+- Ranking.html
+- Helped with design of framework
+
