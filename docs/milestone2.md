@@ -168,3 +168,29 @@ GET /gameHistory
 
 # Heroku
 [Heroku URL](https://badminton-sigma.herokuapp.com)
+
+
+# DIVISION OF LABOUR
+
+Walid Hamade:
+- API
+- Server
+- Ranking and Home front end files
+- GameHistory.html, Home.html revisions
+- CSS updating
+
+Huayang Yu:
+- API
+- Screenshots and wireframe
+- Server / Faker
+- SignIn and SignUp front end files
+- SignIn.html, SignUp.html revisions
+- CSS updating
+
+Zhengrui Yang:
+- API
+- GameHistory and Home front end files
+- Server
+- Heroku deployment
+- Matchmaking.html, Ranking.html revision
+- CSS updating
