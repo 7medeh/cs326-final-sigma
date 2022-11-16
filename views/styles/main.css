@@ -140,3 +140,15 @@ main .sidebar {
     margin-top: 50px;
     font-weight: bold;
 }
+
+#match_result {
+    display: none;
+}
+
+#game_over {
+    display: none;
+}
+
+#score_result {
+    display: none;
+}
