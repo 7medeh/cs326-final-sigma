@@ -167,7 +167,7 @@ GET /gameHistory
 [<img src="./screenshots/gameHistory.png">](GameHistory)
 
 # Heroku
-[Heroku URL](https://badminton-sigma.herokuapp.com)
+[Heroku URL](https://sigma-badminton.herokuapp.com/)
 
 
 # DIVISION OF LABOUR
@@ -194,3 +194,17 @@ Zhengrui Yang:
 - Heroku deployment
 - Matchmaking.html, Ranking.html revision
 - CSS updating
+
+
+Update on 11/15:
+
+Huayang Yu: (front-end implementation)
+add matchmaking.js that interacts with Matchmaking.html
+update Matchmaking.html
+update css file
+
+Zhengrui Yang: (server)
+update server.js, add updateScore and matching operations in server.js specifically.
+
+Walid Hamade:
+add /updateScore and /matching with Zhengrui
