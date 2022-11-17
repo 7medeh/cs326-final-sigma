@@ -1,7 +1,7 @@
 const express = require('express');
 const { faker } = require('@faker-js/faker');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use('/', express.static('views'));
@@ -11,13 +11,40 @@ const users = [
 		email: 'jack@gmail.com',
 		name: 'jack',
 		password: '123456',
+		level: 'low',
+		score: 10,
 	},
 	{
 		email: 'alex@gmail.com',
 		name: 'alex',
 		password: '123456',
-	}
+		level: 'low',
+		score: 23,
+	},
+	{
+		email: 'tom@gmail.com',
+		name: 'tom',
+		password: '123456',
+		level: 'intermediate',
+		score: 68,
+	},
+	{
+		email: 'martin@gmail.com',
+		name: 'martin',
+		password: '123456',
+		level: 'advanced',
+		score: 83,
+	},
+	{
+		email: 'jimmy@gmail.com',
+		name: 'jimmy',
+		password: '123456',
+		level: 'elite',
+		score: 99,
+	},
 ];
+
+const games = [];
 
 const gameHistories = []
 
@@ -85,6 +112,62 @@ app.put('/:email', (req, res) => {
 
 	res.json(matchedUser);
 });
+
+// start matching
+app.post('/matching', (req, res) => {
+	const { email } = req.body;
+
+	const matchedUser = users.find(user => user.email === email);
+	if (!matchedUser) {
+		return res.json({ message: 'Email does not exist.' })
+	}
+
+	const level = matchedUser.level;
+	// TODO Update algorithm to match best competitor
+	const matchedOpponent = users.find(user => user.level === level && user.email !== matchedUser.email);
+	const newGame = {
+		id: faker.database.mongodbObjectId(),
+		user: matchedUser,
+		opponent: matchedOpponent,
+		gameTime: faker.datatype.datetime(),
+		address: faker.address.streetAddress(),
+		userScore: 0,
+		opponentScore: 0,
+		status: 'preparing',
+	}
+	games.push(newGame);
+	res.json(newGame);
+});
+
+// input score(input score)
+app.post('/updateScore', (req, res) => {
+	const { gameId, email, myScore, opponentScore } = req.body;
+	const matchedGame = games.find(game => game.id === gameId);
+	if (matchedGame) {
+		if (matchedGame.status === 'preparing') {
+			if (email === matchedGame.user.email) {
+				matchedGame.userScore = myScore;
+				matchedGame.opponentScore = opponentScore;
+			} else {
+				matchedGame.userScore = opponentScore;
+				matchedGame.opponentScore = myScore;
+			}
+			res.json(matchedGame);
+		} else if (matchedGame.status === 'inputting') {
+			if (
+				(email === matchedGame.user.email && myScore === matchedGame.userScore && opponentScore === matchedGame.opponentScore) ||
+				(email === matchedGame.opponent.email && myScore === matchedGame.opponentScore && opponentScore === matchedGame.userScore)
+			) {
+				matchedGame.status = 'over';
+				res.json(matchedGame);
+			} else {
+				return res.json({ message: 'The score you entered does not match the opponent\'s' });
+			}
+		}
+	} else {
+		return res.json({ message: 'Game does not exist.' })
+	}
+})
 
 // Ranking list
 app.get('/ranking', (req, res) => {
