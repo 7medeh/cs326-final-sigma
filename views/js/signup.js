@@ -5,6 +5,10 @@ signup.addEventListener('click', function() {
 	const password = document.getElementById('password').value;
 	const confirmPassword = document.getElementById('confirm_password').value;
 
+	if (!name) {
+		alert('name required!');
+		return;
+	}
 	if (!email) {
 		alert('email required!');
 		return;
@@ -20,7 +24,7 @@ signup.addEventListener('click', function() {
 		return;
 	}
 
-	if (email && password) {
+	if (name && email && password) {
 		fetch('/signup', {
 			method: 'POST',
 			headers: {
@@ -37,6 +41,7 @@ signup.addEventListener('click', function() {
 					alert(res.message);
 				} else {
 					alert('Sign up successful!')
+					//take you back to sign in page
 					location.href = './index.html';
 				}
 			});
