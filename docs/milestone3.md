@@ -51,7 +51,7 @@ Deployment on Heroku
 Database Implementation including add secret keys to db.js
 
 Zhengrui Yang:
-Server part: UpdataScore and matching
+Server main part: UpdataScore and matching
 API revisions&updates
 Matchmaking.html, Ranking.html revisions&updates
 GameHistory front end file revisions&updates
