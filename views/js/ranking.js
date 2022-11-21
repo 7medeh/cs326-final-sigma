@@ -10,10 +10,6 @@ fetch('/ranking')
 			rankingItem.classList.add('active');
 		}
 
-		if (user._id === res[i]._id) {
-			rankingItem.classList.add('active');
-		}
-
 		let medal = '';
 		if (i === 0) {
 			medal = '<img class="avatar" src="images/gold-medal.png">';
