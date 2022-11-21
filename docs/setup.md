@@ -6,7 +6,7 @@ Go to the url: https://sigma-badminton.herokuapp.com/
 
 ## Heroku Deployment setting
 Add secret keys to access database.
-Set the password as environment var in Heroku before we deploy project
+Configure the password as environment variable in Heroku before we deploy project
 
 ## Accessing from terminal
 Navigate to the root directory for the project.  
