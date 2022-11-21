@@ -56,3 +56,7 @@ API revisions&updates
 Matchmaking.html, Ranking.html revisions&updates
 GameHistory front end file revisions&updates
 Database Implementation: connect to MongoDB, our team use Zhengrui's mongoDB account
+
+**One sample account for public using:
+Account: test@gmail.com
+Password: 123456
