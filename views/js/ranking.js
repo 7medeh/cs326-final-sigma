@@ -7,7 +7,6 @@ fetch('/ranking')
 		const rankingItem = document.createElement('div');
 		rankingItem.classList.add('ranking-item');
 
-		//add 'active' to ranking item classlist
 		if (user._id === res[i]._id) {
 			rankingItem.classList.add('active');
 		}
