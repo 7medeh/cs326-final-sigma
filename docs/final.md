@@ -33,7 +33,7 @@ Walid Hamade: https://github.com/7medeh
 Zhengrui Yang: https://github.com/msodz
 
 # Screenshots
-## SingIn Page
+## SignIn Page
 [<img src="../screenshots/signin.png">](SignIn)
 ## SignUp Page
 [<img src="../screenshots/signup.png">](SignUp)
@@ -510,7 +510,7 @@ https://sigma-badminton.herokuapp.com/Ranking.html    Rankings of all users. Use
 
 https://sigma-badminton.herokuapp.com/Matchmaking.html   start a match with a same-level opponent. After the game over, player needs to upload game result. The system only accepts consistent results.
 
-https://sigma-badminton.herokuapp.com/GameHistory.html   Your game results are saved here. Users can search a game by DateTime, Address, and 778Adversary.
+https://sigma-badminton.herokuapp.com/GameHistory.html   Your game results are saved here. Users can search a game by DateTime, Address, and Adversary.
 
 
 
@@ -527,4 +527,5 @@ If they enter the corresponding email and password, they will sign in successful
 ### Zhengrui Yang:
 
 ## Conclusion
+We learned how to create a whole new application from the beginning through this project. The process is: design static web pages(HTML, css, bootstrap)  ------> front-end implementation(Javascript)  ------>   server(Node, express)   ------>   database(noSQL for this project and how to use them in js files). The back end, especially the interaction between the server and database, is challenging for us. We only learned the very limited basic usage of express and noSQL commands separately in the lectures. But when we actually apply these techniques to a practical project, we found it much more difficult at the beginning. We found it very tricky that when we design the API every time, some information needs to go to the front-end and presents on web pages, and some other function needs to interact with the database. Fortunately, we quickly learned how to solve it through self-learning. Milestone 3 would have gone well and smoothly if these contents had been covered in class. Secondly, to make the system ACID and to address a circumstance that two players have inconsistent game results entering into the system, we use status([“over”, “inputting”, “preparing”]) to control the game phases and design a whole process how the database receive game results. What’s more, we design an algorithm based on the existing ELO algorithm for updating users’ scores. 
 
