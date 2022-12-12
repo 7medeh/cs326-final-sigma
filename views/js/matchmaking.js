@@ -8,6 +8,7 @@ const gameAddress = document.getElementById('game_address');
 const matchResult = document.getElementById('match_result');
 const gameOver = document.getElementById('game_over');
 const startMatch = document.getElementById('start_match');
+const emptyImg = document.getElementById('empty_img');
 const confirm = document.getElementById('confirm');
 const cancel = document.getElementById('cancel');
 
@@ -42,7 +43,8 @@ confirm.addEventListener('click', function() {
 			gameId: gameId,
 			email: user.email,
 			myScore: Number(myScore.value),
-			opponentScore: Number(adversaryScore.value)
+			opponentScore: Number(adversaryScore.value),
+			userId: user._id
 		})
 	}).then(res => res.json())
 		.then((res) => {
@@ -53,6 +55,7 @@ confirm.addEventListener('click', function() {
 				alert('Success!');
 				cancel.click();
 				startMatch.style.display = 'none';
+				emptyImg.style.display = 'none';
 				gameOver.style.display = 'none';
 				if (res.status === 'over') {
 					matchResult.style.display = 'none';
@@ -73,6 +76,7 @@ fetch('/matching?email=' + user.email)
 
 function setGame(data) {
 	startMatch.style.display = 'none';
+	emptyImg.style.display = 'none';
 	myName.textContent = user.name;
 	myAvatar.src = user.avatar;
 	if (data.user.email === user.email) {
@@ -88,7 +92,8 @@ function setGame(data) {
 	gameAddress.textContent = data.address
 	matchResult.style.display = 'block';
 	gameId = data._id;
-	if (new Date > date) {
+
+	if (new Date > date && (!data.firstInputId || (data.firstInputId && data.firstInputId !== user._id))) {
 		gameOver.style.display = 'inline-block'
 	} else {
 		gameOver.style.display = 'none';
