@@ -4,7 +4,7 @@
 
 ## Overview:
 
-Innovative Idea: 1v1 Badminton Ranked Matchmaking
+1v1 Badminton Ranked Matchmaking
 A platform that matches same-level Badminton players against each other in 1v1 instances. What makes our idea cool is that it has a ranking system for competitive matches. At the end of a game, the users both input the results of the match. We would have in place an ELO Rating algorithm that then modifies the respective skill levels by adding and subtracting the ranking scores of each user that is reflective of the agreed upon match results. In application, the “skill” level attribute for each player can be used as a filtering for other people who want more skilled or less skilled players to play against. Would need to be based on the honor system. Our program can identify if at least one person is lying. If the result scores entered by two users are not the sam, then their game information will not be saved into the database and they will not get a score change. Apart from that, if the results inputed from each user match then results are saved because an agreement has been made.
 
 Important Components:
