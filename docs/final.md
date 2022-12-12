@@ -522,6 +522,12 @@ updates functionality at ranking and game history pages, implements and updates 
 #### Zhengrui Yang:
 updates matchmacking page, designs algorithm for updating scores base on ELO algorithm, implements the server including updating users’ score with ELO algorithm
 
+The previous division of labor can be found in the previous milestone.md
+In general, Walid came up with this project idea, and then Zhengrui and Huayang designed the preliminary interfaces. For static pages and the corresponding js files, we are responsible for our own pages separately: Walid did ranking and gamehistory, Zhengrui did matchmaking and home, Huyang did index, signin, and signup.
+When it comes to the server and the database, we almost worked together on them. We also checked other page's functionality and helped improve them. Some tricky parts, such as the algorithm and the whole procedure how the data enters the system and finally comes out to the database, we discussed them together.
+
+
+
 ## Conclusion
 We learned how to create a whole new application from the beginning through this project. The process is: design static web pages(HTML, css, bootstrap)  ------> front-end implementation(Javascript)  ------>   server(Node, express)   ------>   database(noSQL for this project and how to use them in js files). The back end, especially the interaction between the server and database, is challenging for us. We only learned the very limited basic usage of express and noSQL commands separately in the lectures. But when we actually apply these techniques to a practical project, we found it much more difficult at the beginning. We found it very tricky that when we design the API every time, some information needs to go to the front-end and presents on web pages, and some other function needs to interact with the database. Fortunately, we quickly learned how to solve it through self-learning. Milestone 3 would have gone well and smoothly if these contents had been covered in class. Secondly, to make the system ACID and to address a circumstance that two players have inconsistent game results entering into the system, we use status([“over”, “inputting”, “preparing”]) to control the game phases and design a whole process how the database receive game results. What’s more, we design an algorithm based on the existing ELO algorithm for updating users’ scores. 
 
